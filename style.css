@@ -11,8 +11,7 @@ body{
     margin: auto;
     margin-top: 20px;
     margin-bottom: 20px;
-    min-width: 200px;
-    max-width: 400px;
+    width: 300px;
     background-color: #1f1f1f;
     height: 90%;
     border-radius: 20px;
