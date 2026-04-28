@@ -1,94 +1,165 @@
-*{
+* {
     margin: 0px;
     padding: 0px;
+    box-sizing: border-box;
 }
-html{
-    background-color: #1b1b1b;
-    color: white;
-    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+
+:root {
+    --dark-bg: #0f1419;
+    --darker-bg: #0a0d12;
+    --card-bg: #1a1f29;
+    --border-color: #2a3142;
+    --primary-color: #ff4757;
+    --secondary-color: #5bdfff;
+    --text-primary: #ffffff;
+    --text-secondary: #b0b8c5;
+    --transition-fast: 0.2s ease;
+    --transition-normal: 0.3s ease;
 }
-body{
+
+html {
+    background-color: var(--dark-bg);
+    color: var(--text-primary);
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+    scroll-behavior: smooth;
+}
+
+body {
     margin: auto;
     margin-top: 5px;
     margin-bottom: 5px;
     width: 350px;
-    background-color: #1f1f1f;
+    background: linear-gradient(135deg, var(--darker-bg) 0%, var(--dark-bg) 100%);
     height: 90%;
-    border-radius: 20px;
+    border-radius: 24px;
     padding: 20px;
-    box-shadow: 0px 1px 10px rgba(0, 0, 0, 0.274);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.6), inset 0 1px 0 rgba(255, 255, 255, 0.1);
     overflow-x: hidden;
     overflow-y: auto;
+    transition: var(--transition-normal);
 }
 
-/* Navbar Styles */
+body::-webkit-scrollbar {
+    width: 8px;
+}
+
+body::-webkit-scrollbar-track {
+    background: var(--card-bg);
+    border-radius: 10px;
+}
+
+body::-webkit-scrollbar-thumb {
+    background: var(--primary-color);
+    border-radius: 10px;
+}
+
+body::-webkit-scrollbar-thumb:hover {
+    background: var(--secondary-color);
+}
+
+/* ============= HEADER ============= */
 header {
     display: flex;
     flex-direction: column;
-    gap: 15px;
+    gap: 16px;
+    margin-bottom: 10px;
 }
 
 .navbar {
-    background-color: #0d0d0d;
-    border-radius: 15px;
-    padding: 10px;
-    box-shadow: 0px 1px 8px rgba(0, 0, 0, 0.5);
+    background: linear-gradient(135deg, rgba(255, 71, 87, 0.1) 0%, rgba(91, 223, 255, 0.05) 100%);
+    border: 1px solid var(--border-color);
+    border-radius: 16px;
+    padding: 12px;
+    box-shadow: 0 4px 16px rgba(255, 71, 87, 0.1);
+    backdrop-filter: blur(10px);
+    transition: var(--transition-normal);
+}
+
+.navbar:hover {
+    border-color: var(--primary-color);
+    box-shadow: 0 6px 24px rgba(255, 71, 87, 0.2);
 }
 
 .nav-menu {
     list-style: none;
     display: flex;
     justify-content: center;
-    gap: 20px;
+    gap: 12px;
     flex-wrap: wrap;
 }
 
 .nav-link {
-    color: white;
+    color: var(--text-secondary);
     text-decoration: none;
-    padding: 8px 16px;
-    border-radius: 8px;
-    transition: all 0.3s ease;
-    font-weight: 500;
+    padding: 10px 20px;
+    border-radius: 10px;
+    transition: all var(--transition-normal);
+    font-weight: 600;
+    font-size: 0.95em;
+    border: 1.5px solid transparent;
+    display: block;
 }
 
 .nav-link:hover {
-    background-color: rgba(91, 223, 233, 0.2);
-    color: rgb(91, 223, 233);
+    background-color: rgba(91, 223, 233, 0.15);
+    color: var(--secondary-color);
+    border-color: var(--secondary-color);
+    transform: translateY(-2px);
 }
 
 .nav-link.ativo {
-    background-color: rgba(91, 223, 233, 0.3);
-    color: rgb(91, 223, 233);
-    border-bottom: 2px solid rgb(91, 223, 233);
+    background: linear-gradient(135deg, rgba(255, 71, 87, 0.2) 0%, rgba(91, 223, 255, 0.1) 100%);
+    color: var(--primary-color);
+    border-color: var(--primary-color);
+    box-shadow: 0 0 16px rgba(255, 71, 87, 0.3);
 }
 
+/* ============= MUSIC PLAYER ============= */
 div#musica {
     width: 100%;
     overflow: hidden;
     display: flex;
     justify-content: center;
+    background: rgba(26, 31, 41, 0.6);
+    border: 1px solid var(--border-color);
+    border-radius: 16px;
+    padding: 12px;
+    transition: var(--transition-normal);
 }
 
-div#musica > iframe{
+div#musica:hover {
+    border-color: var(--secondary-color);
+    background: rgba(26, 31, 41, 0.8);
+}
+
+div#musica > iframe {
     display: block;
     margin: auto;
     max-width: 100%;
     width: 100% !important;
+    border-radius: 12px;
 }
+
+/* ============= GALERIA ============= */
 .galeria {
     position: relative;
-    background-color: antiquewhite;
-    width: 290px;
-    height: 400px;
+    width: 100%;
+    max-width: 310px;
+    height: 420px;
     overflow: hidden;
-    margin: auto;
-    margin-bottom: 20px;
+    margin: 0 auto 24px;
     border-radius: 20px;
-    box-shadow: 0px 1px 10px rgba(0, 0, 0, 0.301);
-  }
+    box-shadow: 0 12px 40px rgba(255, 71, 87, 0.25), inset 0 1px 0 rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 71, 87, 0.2);
+    transition: var(--transition-normal);
+}
 
-  .imagem-galeria {
+.galeria:hover {
+    box-shadow: 0 16px 48px rgba(255, 71, 87, 0.35), inset 0 1px 0 rgba(255, 255, 255, 0.1);
+    transform: translateY(-4px);
+}
+
+.imagem-galeria {
     position: absolute;
     top: 0;
     left: 0;
@@ -96,40 +167,120 @@ div#musica > iframe{
     height: 100%;
     object-fit: cover;
     opacity: 0;
-    transition: opacity 1s ease-in-out;
-  }
+    transition: opacity 1.2s cubic-bezier(0.4, 0, 0.2, 1);
+}
 
-  .imagem-galeria.ativo {
+.imagem-galeria.ativo {
     opacity: 1;
-  }
-div.relogio>p{
-    display: block;
-    margin: auto;
-    margin-top: 10px;
-    text-align: center;
-    max-width: 50vw;
-}
-h2{
-    text-align: center;
-    font-size: 1.3em;
-}
-article>div.linha{
-    margin: auto;
-    margin-top: 20px;
-    margin-bottom: 20px;
-    width: 300px;
-    height: 1px;
-    background-color: rgb(91, 223, 233);
-    border-radius: 1px;
-}
-main>article>p{
-    display: block;
-    margin: auto;
-    text-align: center;
-    max-width: 300px;
 }
 
-/* Playlists Page Styles */
+/* ============= ARTICLE ============= */
+main {
+    width: 100%;
+}
+
+article {
+    background: linear-gradient(135deg, var(--card-bg) 0%, rgba(26, 31, 41, 0.8) 100%);
+    border: 1px solid var(--border-color);
+    border-radius: 20px;
+    padding: 24px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4), inset 0 1px 0 rgba(255, 255, 255, 0.05);
+    transition: var(--transition-normal);
+}
+
+article:hover {
+    border-color: rgba(91, 223, 233, 0.3);
+    box-shadow: 0 12px 48px rgba(91, 223, 233, 0.15), inset 0 1px 0 rgba(255, 255, 255, 0.1);
+}
+
+/* ============= TYPOGRAPHY ============= */
+h2 {
+    text-align: center;
+    font-size: 1.6em;
+    font-weight: 700;
+    background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    margin-bottom: 16px;
+    letter-spacing: -0.5px;
+}
+
+h3 {
+    font-size: 1.2em;
+    font-weight: 700;
+}
+
+/* ============= TIMER ============= */
+div.relogio {
+    margin: 16px 0;
+    padding: 16px;
+    background: rgba(255, 71, 87, 0.08);
+    border: 1px solid rgba(255, 71, 87, 0.2);
+    border-radius: 12px;
+    transition: var(--transition-normal);
+}
+
+div.relogio:hover {
+    background: rgba(255, 71, 87, 0.12);
+    border-color: var(--primary-color);
+    box-shadow: 0 0 16px rgba(255, 71, 87, 0.15);
+}
+
+div.relogio > p {
+    display: block;
+    margin: 0;
+    text-align: center;
+    max-width: 100%;
+    font-size: 1.05em;
+    font-weight: 600;
+    color: var(--primary-color);
+    letter-spacing: 0.5px;
+}
+
+/* ============= DIVIDERS ============= */
+article > div.linha {
+    margin: 20px auto;
+    width: 100%;
+    height: 2px;
+    background: linear-gradient(90deg, transparent 0%, var(--primary-color) 25%, var(--secondary-color) 50%, var(--primary-color) 75%, transparent 100%);
+    border-radius: 1px;
+    opacity: 0.6;
+    transition: var(--transition-normal);
+}
+
+article > div.linha:hover {
+    opacity: 1;
+}
+
+/* ============= TEXT CONTENT ============= */
+article > p {
+    display: block;
+    margin: 16px auto;
+    text-align: center;
+    max-width: 100%;
+    color: var(--text-secondary);
+    font-size: 0.95em;
+    line-height: 1.6;
+    letter-spacing: 0.3px;
+    transition: var(--transition-normal);
+}
+
+article > p:hover {
+    color: var(--text-primary);
+}
+
+article > p:first-of-type {
+    margin-top: 0;
+    font-weight: 500;
+    color: var(--text-primary);
+}
+
+article > br {
+    display: none;
+}
+
+/* ============= PLAYLISTS PAGE ============= */
 .playlists-container {
     display: flex;
     flex-direction: column;
@@ -139,63 +290,185 @@ main>article>p{
 }
 
 .playlist-card {
-    background-color: #2a2a2a;
-    border-radius: 15px;
-    padding: 15px;
-    box-shadow: 0px 1px 8px rgba(0, 0, 0, 0.3);
+    background: linear-gradient(135deg, rgba(255, 71, 87, 0.08) 0%, rgba(91, 223, 255, 0.04) 100%);
+    border: 1.5px solid var(--border-color);
+    border-radius: 16px;
+    padding: 20px;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.3);
+    transition: all var(--transition-normal);
+}
+
+.playlist-card:hover {
+    border-color: var(--secondary-color);
+    box-shadow: 0 8px 24px rgba(91, 223, 233, 0.15);
+    transform: translateY(-4px);
 }
 
 .playlist-card h3 {
     text-align: center;
-    color: rgb(91, 223, 233);
+    background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
     margin-bottom: 10px;
-    font-size: 1.1em;
+    font-size: 1.2em;
 }
 
 .playlist-card p {
     text-align: center;
     font-size: 0.9em;
-    color: #bbb;
+    color: var(--text-secondary);
+    margin: 0 0 12px 0;
+}
+
+.playlist-desc-short {
+    margin-bottom: 12px;
+    font-style: italic;
+}
+
+.btn-reveal {
+    background: linear-gradient(135deg, rgba(255, 71, 87, 0.2) 0%, rgba(91, 223, 255, 0.1) 100%);
+    border: 1.5px solid var(--primary-color);
+    color: var(--primary-color);
+    padding: 10px 16px;
+    border-radius: 10px;
+    font-size: 0.9em;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all var(--transition-normal);
+    display: block;
+    margin: 0 auto 12px;
+    white-space: nowrap;
+}
+
+.btn-reveal:hover {
+    background: linear-gradient(135deg, rgba(255, 71, 87, 0.3) 0%, rgba(91, 223, 255, 0.2) 100%);
+    border-color: var(--secondary-color);
+    color: var(--secondary-color);
+    box-shadow: 0 0 12px rgba(255, 71, 87, 0.2);
+    transform: translateY(-2px);
+}
+
+.btn-reveal.revealed {
+    background: linear-gradient(135deg, rgba(255, 71, 87, 0.15) 0%, rgba(91, 223, 255, 0.15) 100%);
+    border-color: var(--secondary-color);
+    color: var(--secondary-color);
+}
+
+.playlist-desc-full {
+    background: rgba(91, 223, 233, 0.08);
+    border-left: 3px solid var(--primary-color);
+    border-radius: 8px;
+    padding: 12px;
+    margin-bottom: 12px;
+    animation: slideDown 0.3s ease-out;
+}
+
+.playlist-desc-full p {
     margin: 0;
+    font-size: 0.9em;
+    color: var(--text-secondary);
+    line-height: 1.5;
+    font-style: italic;
+}
+
+@keyframes slideDown {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
 .playlist-card iframe {
     max-width: 100%;
     width: 100% !important;
+    border-radius: 12px;
 }
 
-/* Responsivo para celulares */
+/* ============= RESPONSIVE ============= */
 @media (max-width: 480px) {
     body {
         width: 100%;
         border-radius: 0px;
-        padding: 10px;
+        padding: 12px;
+        margin: 0;
+        height: auto;
     }
-    
+
+    article {
+        padding: 16px;
+    }
+
+    h2 {
+        font-size: 1.4em;
+    }
+
     .galeria {
-        width: 100% !important;
         max-width: 100%;
+        height: 280px;
+        margin-bottom: 16px;
     }
-    
-    main>article>p {
-        max-width: 100% !important;
+
+    main > article > p {
+        max-width: 100%;
+        font-size: 0.9em;
     }
-    
-    article>div.linha {
-        width: 100% !important;
+
+    article > div.linha {
+        margin: 16px auto;
     }
-    
+
     div#musica > iframe {
         width: 100% !important;
         max-width: 100%;
     }
-    
+
     .nav-menu {
-        gap: 10px;
+        gap: 8px;
     }
-    
+
+    .nav-link {
+        padding: 8px 16px;
+        font-size: 0.85em;
+    }
+
+    .navbar {
+        padding: 10px;
+    }
+
+    div.relogio {
+        padding: 12px;
+        margin: 12px 0;
+    }
+
+    div.relogio > p {
+        font-size: 0.95em;
+    }
+}
+
+@media (max-width: 320px) {
+    body {
+        padding: 8px;
+    }
+
+    article {
+        padding: 12px;
+    }
+
+    h2 {
+        font-size: 1.2em;
+    }
+
     .nav-link {
         padding: 6px 12px;
-        font-size: 0.9em;
+        font-size: 0.8em;
+    }
+
+    main > article > p {
+        font-size: 0.85em;
     }
 }

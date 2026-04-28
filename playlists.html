@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Playlists - Dia dos Namorados ❤️</title>
+    <title>Playlists❤️</title>
     <link rel="stylesheet" href="style.css">
     <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
 </head>
@@ -11,7 +11,7 @@
     <header>
         <nav class="navbar">
             <ul class="nav-menu">
-                <li><a href="index.html" class="nav-link">Home</a></li>
+                <li><a href="index.html" class="nav-link">Contador</a></li>
                 <li><a href="playlists.html" class="nav-link ativo">Playlists</a></li>
             </ul>
         </nav>
@@ -22,31 +22,119 @@
             <div class="linha"></div>
             <div class="playlists-container">
                 <div class="playlist-card">
-                    <h3>Playlist 1</h3>
-                    <p>Adicione suas playlists favoritas aqui</p>
-                    <iframe style="border-radius:12px; margin-top: 10px;" 
-                        src="https://open.spotify.com/embed/playlist/37i9dQZF1DZ52aq7wpxYfy?utm_source=generator" 
-                        height="152" frameBorder="0" 
-                        allowfullscreen="" 
-                        allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" 
-                        loading="lazy">
-                    </iframe>
+                    <h3>Você</h3>
+                    <p class="playlist-desc-short">Essas são as musicas que representam sua personalidade ou que me lembram de vc!</p>
+                    <iframe data-testid="embed-iframe" style="border-radius:12px" src="https://open.spotify.com/embed/playlist/1JuC1Rs63vXSrCtMdLGDfl?utm_source=generator" width="100%" height="220" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+                    <button class="btn-reveal" onclick="toggleReveal(this)">📖 Revelar</button>
+                    <div class="playlist-desc-full" style="display: none;">
+                        <p>Nuvem vermelha representa o titulo da playlist Você. Minha primavera, meu amor, seus cabelos vermelhos do começo do nosso relacionameto. 
+                           <br><br> 
+                        Mulher homen bicho, acho que não tem musica que mais te represente nessa playlist. Não quero parafrasear a Ellen mas essa musica é mt vc ksdksdk. 
+                        <br><br>
+                        As demais musicas da playlist ou fazer parte do seu gosto pessoal ou me lembram muito de vc quando escuto. pra min são as musicas que te representam💕</p>
+                    </div>
                 </div>
                 <div class="playlist-card">
-                    <h3>Playlist 2</h3>
-                    <p>Adicione suas playlists favoritas aqui</p>
-                    <iframe style="border-radius:12px; margin-top: 10px;" 
-                        src="https://open.spotify.com/embed/playlist/37i9dQZF1DZ52aq7wpxYfy?utm_source=generator" 
-                        height="152" frameBorder="0" 
-                        allowfullscreen="" 
-                        allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" 
-                        loading="lazy">
-                    </iframe>
+                    <h3>Nosso Começo...</h3>
+                    <p class="playlist-desc-short">As Acho que tem uma história por tras dessas musicas kkkk é mt nosso começo.</p>
+                    <iframe data-testid="embed-iframe" style="border-radius:12px" src="https://open.spotify.com/embed/playlist/1RcF1APJq30WaVRqsP6U7T?utm_source=generator" width="100%" height="220" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+                    <button class="btn-reveal" onclick="toggleReveal(this)">📖 Revelar</button>
+                    <div class="playlist-desc-full" style="display: none;">
+                        <p>From the Start, apesar de não saber eu me apaixonei por vc desde o começo. <br><br> Essa playlis conta a historia do nosso relacionamento e o desenrolar dos primeiros meses, primeiros encontros, pensamentos, medos, paixão, até finalmente a certeza do amor. <br> <br> Finalmente não resta mais duvida, eu te amo!</p>
+                    </div>
+                </div>
+                <div class="playlist-card">
+                    <h3>Tudo que sinto por vc</h3>
+                    <p class="playlist-desc-short">Tudo que eu sinto e já senti por vc!</p>
+                    <iframe data-testid="embed-iframe" style="border-radius:12px" src="https://open.spotify.com/embed/playlist/7jCQgk4V6R6crYKkGC4nnR?utm_source=generator" width="100%" height="220" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+                    <button class="btn-reveal" onclick="toggleReveal(this)">📖 Revelar</button>
+                    <div class="playlist-desc-full" style="display: none;">
+                        <p>Pupila, essa musica é definitivamete minha primeira obceção por musica romantica, nunca pensei que ela seria relatable tão rapido na minha vida. E ela dá inicio justamente nos primeiros sentimentos que eu senti por vc e como eles foram evoluindo ao longo do tempo.
+                        <br><br>
+                        Definitivamente amor é raso dms pra descrever tudo que eu sinto e que me atrai em vc. Então o meio da playlist diz muito sobre como eu te vejo.</p>
+                    </div>
+                </div>
+                <div class="playlist-card">
+                    <h3>pov estamos brigados</h3>
+                    <p class="playlist-desc-short">Pra ouvir quando eu tiver feito alguma merda kkkk</p>
+                    <iframe data-testid="embed-iframe" style="border-radius:12px" src="https://open.spotify.com/embed/playlist/4nLvoZSwPsjtLs0q0z7Csg?utm_source=generator&theme=0" width="100%" height="220" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+                    <button class="btn-reveal" onclick="toggleReveal(this)">📖 Revelar</button>
+                    <div class="playlist-desc-full" style="display: none;">
+                        <p>Sugar Talking descreve um dos momentos onde eu piso na bola com algo que a gente provavelmente já conversou antes, e eu assumo que posso falhar nas minhas promeças e que vc tem todo o direito de ficar chateada comigo.
+                        <br><br>
+                        Porem como cachorrinho arrependido que sou, eu quero que vc me perdoe e me de mais uma chance, amar é um deserto e seus temores.
+                        <br><br>
+                        Oceano, eu sei que é dificil, mas volta pra min momo😭.
+                        </p>
+                    </div>
+                </div>
+                <div class="playlist-card">
+                    <h3>Futuro</h3>
+                    <p class="playlist-desc-short">Playlist que descreve nosso futuro💕.</p>
+                    <iframe data-testid="embed-iframe" style="border-radius:12px" src="https://open.spotify.com/embed/playlist/3I7vR6NIZa3Lxzired0iJj?utm_source=generator" width="100%" height="220" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+                    <button class="btn-reveal" onclick="toggleReveal(this)">📖 Revelar</button>
+                    <div class="playlist-desc-full" style="display: none;">
+                        <p>Ninguem me ensinou, é pra ficar bem claro que nosso futuro vai ser muito foda! To tão ansioso pra passar o resto da vida do seu lado que não existe limite pra o que eu quero viver ao seu lado, e quero que vc sonhe junto comigo.
+                        <br><br>
+                        o Apce da playlist definitivamente é Aliança, definitivamente meu maior sonho é te ver de branco no altar. Vc é tudo que eu preciso pra minha vida, você me faz o homen mais feliz do mundo todos os dias meu bem.
+                        <br><Br>
+                        Para dançar e sonhar é um trecho emocionante pra min no filme que marcou minha infancia. Stoico achou que nunca mais veria a mulher que amou e que avia perdido ela pra sempre. Porem ciente dos seus erros não tentou se justificar, apenas canta.
+                        <br><Br> 
+                        No mar bravio vou navegar
+                        <br><Br>
+                        Sem medo do perigo
+                        E as ondas vou enfrentar
+                        Se comigo casar
+                        <br><Br>
+                        E nem o frio ou o calor
+                        Será uma ameaça
+                        Se me entregar seu coração
+                        E então
+                        <br><Br>
+                        Eternamente me amar
+                        <br><Br>
+                        Acho que não existe prova de amor maior do que resistir a força da natureza e enfrentar o mar bravo pela pessoa que mais ama no mundo.
+                        <br><Br>
+                        Quero ser esse homen pra você meu amor.
+                        </p>
+                    </div>
+                </div>
+                <div class="playlist-card">
+                    <h3>Faz amor comigo?</h3>
+                    <p class="playlist-desc-short">Nossa playlist oficial de SEXO 😈.</p>
+                    <iframe data-testid="embed-iframe" style="border-radius:12px" src="https://open.spotify.com/embed/playlist/5UK56zOwj3EhSumt8sdF4h?utm_source=generator" width="100%" height="220" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+                    <button class="btn-reveal" onclick="toggleReveal(this)">📖 Revelar</button>
+                    <div class="playlist-desc-full" style="display: none;">
+                        <p>Acho que só de imaginar ouvir essa playlist já fico com tesão. 
+                        <br><br>
+                        QUERO FUDER OUVINDO ISSO POR FAVOR!    
+                        </p>
+                    </div>
+                </div>
+                <div class="playlist-card">
+                    <h3>Menção honrosa</h3>
+                    <p class="playlist-desc-short">Musicas que não encaixaram mas foram mensionadas.</p>
+                    <iframe data-testid="embed-iframe" style="border-radius:12px" src="https://open.spotify.com/embed/playlist/0H5BSrBbMyYgVNvvCmIruT?utm_source=generator" width="100%" height="220" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+                    <button class="btn-reveal" onclick="toggleReveal(this)">📖 Revelar</button>
+                    <div class="playlist-desc-full" style="display: none;">
+                        <p>Eu não vou me explicar não dkskdsk. só pq sim eu acho.</p>
+                    </div>
                 </div>
             </div>
             <div class="linha"></div>
-            <p style="margin-top: 20px; font-size: 0.9em; color: rgb(91, 223, 233);">Adicione suas playlists do Spotify aqui! 💝</p>
+            <p>Cada playlist foi pensada e ordenada pra fazer vc se sentir amada meu amor. Aproveita💝</p>
         </article>
     </main>
+    <script>
+        function toggleReveal(button) {
+            const card = button.closest('.playlist-card');
+            const fullDesc = card.querySelector('.playlist-desc-full');
+            const isVisible = fullDesc.style.display !== 'none';
+            
+            fullDesc.style.display = isVisible ? 'none' : 'block';
+            button.textContent = isVisible ? '📖 Revelar' : '📖 Ocultar';
+            button.classList.toggle('revealed', !isVisible);
+        }
+    </script>
 </body>
 </html>
