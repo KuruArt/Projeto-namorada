@@ -22,19 +22,22 @@ html {
     color: var(--text-primary);
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
     scroll-behavior: smooth;
+    width: 100%;
+    overflow-x: hidden;
 }
 
 body {
     margin: auto;
     margin-top: 5px;
     margin-bottom: 5px;
-    width: 350px;
+    width: 100%;
+    max-width: 350px;
     background: linear-gradient(135deg, var(--darker-bg) 0%, var(--dark-bg) 100%);
     height: 90%;
     border-radius: 24px;
     padding: 20px;
     box-shadow: 0 8px 32px rgba(0, 0, 0, 0.6), inset 0 1px 0 rgba(255, 255, 255, 0.1);
-    overflow-x: hidden;
+    overflow-x: visible;
     overflow-y: auto;
     transition: var(--transition-normal);
 }
@@ -390,21 +393,46 @@ article > br {
 }
 
 /* ============= RESPONSIVE ============= */
-@media (max-width: 480px) {
+@media (max-width: 768px) {
+    body {
+        margin-top: 10px;
+        margin-bottom: 10px;
+        border-radius: 16px;
+        padding: 16px;
+        height: auto;
+    }
+
+    .btn-reveal {
+        padding: 12px 18px;
+        font-size: 0.95em;
+    }
+
+    .playlist-card {
+        padding: 16px;
+    }
+}
+
+@media (max-width: 600px) {
     body {
         width: 100%;
-        border-radius: 0px;
-        padding: 12px;
-        margin: 0;
-        height: auto;
+        max-width: 100%;
+        border-radius: 12px;
+        padding: 14px;
+        margin: 5px auto;
+    }
+
+    header {
+        gap: 12px;
     }
 
     article {
         padding: 16px;
+        border-radius: 16px;
     }
 
     h2 {
         font-size: 1.4em;
+        margin-bottom: 12px;
     }
 
     .galeria {
@@ -413,50 +441,100 @@ article > br {
         margin-bottom: 16px;
     }
 
-    main > article > p {
-        max-width: 100%;
+    .nav-menu {
+        gap: 8px;
+        flex-wrap: wrap;
+    }
+
+    .nav-link {
+        padding: 10px 16px;
         font-size: 0.9em;
     }
 
-    article > div.linha {
-        margin: 16px auto;
+    .navbar {
+        padding: 12px;
+    }
+
+    div#musica {
+        padding: 10px;
     }
 
     div#musica > iframe {
         width: 100% !important;
         max-width: 100%;
-    }
-
-    .nav-menu {
-        gap: 8px;
-    }
-
-    .nav-link {
-        padding: 8px 16px;
-        font-size: 0.85em;
-    }
-
-    .navbar {
-        padding: 10px;
+        height: 90px !important;
     }
 
     div.relogio {
-        padding: 12px;
-        margin: 12px 0;
+        padding: 14px;
+        margin: 14px 0;
+        border-radius: 12px;
     }
 
     div.relogio > p {
         font-size: 0.95em;
+        word-break: break-word;
+    }
+
+    article > p {
+        font-size: 0.9em;
+        line-height: 1.5;
+        margin: 12px auto;
+    }
+
+    article > div.linha {
+        margin: 14px auto;
+        height: 2px;
+    }
+
+    .playlists-container {
+        gap: 16px;
+        margin-top: 16px;
+    }
+
+    .playlist-card {
+        padding: 14px;
+        border-radius: 14px;
+    }
+
+    .playlist-card h3 {
+        font-size: 1.1em;
+        margin-bottom: 8px;
+    }
+
+    .playlist-card p {
+        font-size: 0.85em;
+    }
+
+    .btn-reveal {
+        padding: 10px 14px;
+        font-size: 0.9em;
+        border-radius: 8px;
+    }
+
+    .playlist-desc-full {
+        padding: 10px;
+        margin-bottom: 10px;
+        font-size: 0.85em;
+    }
+
+    .playlist-card iframe {
+        max-width: 100%;
+        width: 100% !important;
+        height: 200px !important;
     }
 }
 
-@media (max-width: 320px) {
+@media (max-width: 400px) {
     body {
-        padding: 8px;
+        padding: 10px;
+        border-radius: 8px;
+        margin: 3px auto;
     }
 
     article {
         padding: 12px;
+        border-radius: 12px;
     }
 
     h2 {
@@ -464,11 +542,78 @@ article > br {
     }
 
     .nav-link {
-        padding: 6px 12px;
+        padding: 8px 12px;
+        font-size: 0.8em;
+        border-radius: 8px;
+    }
+
+    .navbar {
+        padding: 8px;
+        border-radius: 12px;
+    }
+
+    .galeria {
+        height: 240px;
+        border-radius: 16px;
+    }
+
+    article > p {
+        font-size: 0.85em;
+        margin: 10px auto;
+    }
+
+    div.relogio {
+        padding: 12px;
+        margin: 10px 0;
+    }
+
+    div.relogio > p {
+        font-size: 0.9em;
+    }
+
+    .btn-reveal {
+        padding: 8px 12px;
+        font-size: 0.85em;
+    }
+
+    .playlist-card {
+        padding: 12px;
+    }
+
+    .playlist-card iframe {
+        height: 180px !important;
+    }
+}
+
+@media (max-width: 320px) {
+    body {
+        padding: 8px;
+        max-width: 100%;
+    }
+
+    article {
+        padding: 10px;
+    }
+
+    h2 {
+        font-size: 1.1em;
+    }
+
+    .nav-link {
+        padding: 6px 10px;
+        font-size: 0.75em;
+    }
+
+    article > p {
         font-size: 0.8em;
     }
 
-    main > article > p {
-        font-size: 0.85em;
+    .galeria {
+        height: 220px;
+    }
+
+    .btn-reveal {
+        padding: 6px 10px;
+        font-size: 0.8em;
     }
 }

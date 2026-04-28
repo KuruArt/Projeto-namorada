@@ -101,6 +101,25 @@ function inicializarAutoplaySpotify() {
 }
 
 /**
+ * Função para revelar/ocultar descrição das playlists
+ */
+function toggleReveal(button) {
+  const descricaoFull = button.nextElementSibling;
+  
+  if (descricaoFull && descricaoFull.classList.contains('playlist-desc-full')) {
+    const isHidden = descricaoFull.style.display === 'none';
+    
+    if (isHidden) {
+      descricaoFull.style.display = 'block';
+      button.classList.add('revealed');
+    } else {
+      descricaoFull.style.display = 'none';
+      button.classList.remove('revealed');
+    }
+  }
+}
+
+/**
  * Inicializa todos os scripts ao carregar a página
  */
 document.addEventListener('DOMContentLoaded', function() {
