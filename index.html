@@ -9,10 +9,16 @@
 </head>
 <body>
     <header>
+        <nav class="navbar">
+            <ul class="nav-menu">
+                <li><a href="index.html" class="nav-link ativo">Home</a></li>
+                <li><a href="playlists.html" class="nav-link">Playlists</a></li>
+            </ul>
+        </nav>
         <div id="musica">
-            <iframe style="border-radius:12px" 
-            src="https://open.spotify.com/embed/track/3iof6EclqePezHDibBiykI?utm_source=generator" 
-            width="70%" height="100" frameBorder="0" 
+            <iframe id="spotify-player" style="border-radius:12px" 
+            src="https://open.spotify.com/embed/track/3iof6EclqePezHDibBiykI?utm_source=generator&utm_medium=embed" 
+            height="100" frameBorder="0" 
             allowfullscreen="" 
             allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" 
             loading="lazy">
@@ -53,64 +59,6 @@
             <p>FELIZ DIA DOS NAMORADOS ! 💝 💖💗❤️‍🔥💕</p>
         </article>
     </main>
+    <script src="script.js"></script>
 </body>
-<script>
-  // Defina a data inicial aqui
-  const dataInicial = new Date('2024-11-22T00:00:00');
-
-  function atualizarTempo() {
-    const agora = new Date();
-    let diffMs = agora - dataInicial;
-
-    // Total em segundos
-    let totalSegundos = Math.floor(diffMs / 1000);
-
-    const anos = Math.floor(totalSegundos / (365.25 * 24 * 60 * 60));
-    totalSegundos %= Math.floor(365.25 * 24 * 60 * 60);
-
-    const meses = Math.floor(totalSegundos / (30.44 * 24 * 60 * 60));
-    totalSegundos %= Math.floor(30.44 * 24 * 60 * 60);
-
-    const dias = Math.floor(totalSegundos / (24 * 60 * 60));
-    totalSegundos %= 24 * 60 * 60;
-
-    const horas = Math.floor(totalSegundos / (60 * 60));
-    totalSegundos %= 60 * 60;
-
-    const minutos = Math.floor(totalSegundos / 60);
-    const segundos = totalSegundos % 60;
-
-    let partes = [];
-
-    if (anos > 0) partes.push(`${anos} ano${anos > 1 ? 's' : ''}`);
-    if (meses > 0) partes.push(`${meses} mês${meses > 1 ? 'es' : ''}`);
-    if (dias > 0) partes.push(`${dias} dia${dias > 1 ? 's' : ''}`);
-    if (horas > 0) partes.push(`${horas} hora${horas > 1 ? 's' : ''}`);
-    if (minutos > 0) partes.push(`${minutos} minuto${minutos > 1 ? 's' : ''}`);
-    if (segundos > 0) partes.push(`${segundos} segundo${segundos > 1 ? 's' : ''}`);
-
-    const texto = partes.join(', ');
-
-    document.getElementById('tempo-decorrido').innerText = texto;
-  }
-
-  // Atualiza a cada segundo
-  setInterval(atualizarTempo, 1000);
-
-  // Chamada inicial
-  atualizarTempo();
-</script>
-<script>
-    const imagens = document.querySelectorAll('.imagem-galeria');
-  let indiceAtual = 0;
-  const totalImagens = imagens.length;
-
-  function trocarImagem() {
-    imagens[indiceAtual].classList.remove('ativo');
-    indiceAtual = (indiceAtual + 1) % totalImagens;
-    imagens[indiceAtual].classList.add('ativo');
-  }
-
-  setInterval(trocarImagem, 3000);
-</script>
 </html>

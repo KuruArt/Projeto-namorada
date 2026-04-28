@@ -17,10 +17,64 @@ body{
     border-radius: 20px;
     padding: 20px;
     box-shadow: 0px 1px 10px rgba(0, 0, 0, 0.274);
+    overflow-x: hidden;
+    overflow-y: auto;
 }
+
+/* Navbar Styles */
+header {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.navbar {
+    background-color: #0d0d0d;
+    border-radius: 15px;
+    padding: 10px;
+    box-shadow: 0px 1px 8px rgba(0, 0, 0, 0.5);
+}
+
+.nav-menu {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.nav-link {
+    color: white;
+    text-decoration: none;
+    padding: 8px 16px;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+    font-weight: 500;
+}
+
+.nav-link:hover {
+    background-color: rgba(91, 223, 233, 0.2);
+    color: rgb(91, 223, 233);
+}
+
+.nav-link.ativo {
+    background-color: rgba(91, 223, 233, 0.3);
+    color: rgb(91, 223, 233);
+    border-bottom: 2px solid rgb(91, 223, 233);
+}
+
+div#musica {
+    width: 100%;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+}
+
 div#musica > iframe{
     display: block;
     margin: auto;
+    max-width: 100%;
+    width: 100% !important;
 }
 .galeria {
     position: relative;
@@ -73,4 +127,75 @@ main>article>p{
     margin: auto;
     text-align: center;
     max-width: 300px;
+}
+
+/* Playlists Page Styles */
+.playlists-container {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.playlist-card {
+    background-color: #2a2a2a;
+    border-radius: 15px;
+    padding: 15px;
+    box-shadow: 0px 1px 8px rgba(0, 0, 0, 0.3);
+}
+
+.playlist-card h3 {
+    text-align: center;
+    color: rgb(91, 223, 233);
+    margin-bottom: 10px;
+    font-size: 1.1em;
+}
+
+.playlist-card p {
+    text-align: center;
+    font-size: 0.9em;
+    color: #bbb;
+    margin: 0;
+}
+
+.playlist-card iframe {
+    max-width: 100%;
+    width: 100% !important;
+}
+
+/* Responsivo para celulares */
+@media (max-width: 480px) {
+    body {
+        width: 100%;
+        border-radius: 0px;
+        padding: 10px;
+    }
+    
+    .galeria {
+        width: 100% !important;
+        max-width: 100%;
+    }
+    
+    main>article>p {
+        max-width: 100% !important;
+    }
+    
+    article>div.linha {
+        width: 100% !important;
+    }
+    
+    div#musica > iframe {
+        width: 100% !important;
+        max-width: 100%;
+    }
+    
+    .nav-menu {
+        gap: 10px;
+    }
+    
+    .nav-link {
+        padding: 6px 12px;
+        font-size: 0.9em;
+    }
 }
